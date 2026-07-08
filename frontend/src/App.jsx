@@ -1,11 +1,21 @@
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Navbar from "./components/Navbar"
+import Home from "./pages/Home"
+import TutorList from "./pages/TutorList"
+import Register from "./pages/Register"
+import Login from "./pages/Login"
 
 function App() {
   return (
-    <div>
+   <BrowserRouter>
     <Navbar/>
-      <h1>Welcome to TuitionConnect</h1>
-    </div>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+        <Route path='/tutors' element={<TutorList/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/register' element={<Register/>}/>  
+    </Routes>
+   </BrowserRouter>
   )
 }
 
